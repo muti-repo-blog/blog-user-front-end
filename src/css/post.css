@@ -1,0 +1,100 @@
+.featuredPosts {
+  max-width: max(80vw, min(90vw, 300px));
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 350px);
+  gap: 10px;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.featuredPost {
+  border: 2px solid #F8FAF9;
+  max-width: 90vw;
+  border-radius: 1px;
+  padding: 10px;
+  background-color: #C4BFB5;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  transition: transform 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+
+.featuredPost:hover,
+.featuredPost:focus {
+  background-color: #B0ABA1;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transform: scale(1.02);
+  outline: none;
+}
+
+.paganation {
+  display: flex;
+  font-size: large;
+  align-items: center;
+}
+
+.currentPage {
+  padding: 5px 10px;
+}
+
+.pageArrow {
+  height: 20px;
+}
+
+.pageArrowButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  padding: 10px;
+  aspect-ratio: 1;
+  border: none;
+  cursor: pointer;
+}
+
+.pageArrowButton:hover,
+.pageArrowButton:focus {
+  background-color: rgb(0, 0, 0, 0.3);
+}
+
+.pageArrowButton:active {
+  background-color: rgb(0, 0, 0, .5);
+}
+
+.pageArrowButton:disabled {
+  cursor: not-allowed;
+  background-color: gainsboro;
+}
+
+.singlePost {
+  width: max(70vw, min(90vw, 300px));
+  background-color: #C4BFB5;
+  padding: 20px;
+  min-height: 20vh;
+  border-radius: 2px;
+  line-height: 1.5;
+  font-size: large;
+}
+
+.comment {
+  width: max(70vw, min(90vw, 300px));
+  background-color: #C4BFB5;
+  padding: 20px;
+}
+
+.morePost {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.commentTop {
+  width: max(70vw, min(90vw, 300px));
+  text-align: center;
+}
+
+.commentTop hr {
+  height: 5px;
+  background-color: gray;
+  border-radius: 20px;
+  border: none;
+}

@@ -1,0 +1,59 @@
+/* Toolbar background */
+.tox .tox-toolbar,
+.tox .tox-toolbar__primary,
+.tox .tox-toolbar__overflow,
+.tox .tox-editor-header {
+  background-color: #788978 !important;
+}
+
+/* Toolbar buttons background and text */
+.tox .tox-tbtn {
+  background-color: #C4BFB5 !important;
+  color: black !important;
+}
+
+/* Toolbar button icons (SVG) */
+.tox .tox-tbtn svg {
+  fill: black !important;
+}
+
+/* toolbar hover */
+.tox .tox-tbtn:hover {
+  background-color: #ddd !important;
+  color: #1a1a1a !important;
+}
+
+/* Bottom status bar */
+.tox .tox-statusbar {
+  background-color: #788978 !important;
+  color: white !important;
+  border-top: 1px solid #333;
+}
+
+/* Editor container border */
+.tox.tox-tinymce {
+  border: 1px solid #333;
+}
+
+.tox .tox-tbtn[aria-pressed="true"] {
+  background-color: #2F362F !important;
+}
+
+.tox .tox-tbtn[aria-pressed="true"] svg {
+  fill: white !important;
+}
+
+.tinymceSubmitButton {
+  background-color: #2F362F;
+  padding: 6px 20px;
+  color: #D9D3C6;
+  font-size: large;
+  border: none;
+  border-radius: 4px;
+  margin: 10px 0px;
+}
+
+.tinymceSubmitButton:hover,
+.tinymceSubmitButton:focus {
+  background-color: #4A524A;
+}
