@@ -54,7 +54,14 @@ const Posts = () => {
           </Link>
         ))}
       </div>
-      {data &&
+
+        {data && data.totalPages === 0 &&
+          <p>
+            No posts yet go make one
+          </p>
+        }
+
+      {data && data.totalPages !== 0 &&
         <div className="paganation">
           <button className="pageArrowButton" tabIndex={0} disabled={page === 1} onClick={() => setPage(page - 1)}>
             <img className="pageArrow" src="/assets/arrow-left.svg" alt="back one page" />

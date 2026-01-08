@@ -9,8 +9,6 @@ const App = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true)
 
-  console.log('Base URL:', import.meta.env.VITE_BASE_URL);
-
   useEffect(() => {
     fetch(import.meta.env.VITE_BASE_URL)
       .then((response) => response.json())
@@ -29,7 +27,7 @@ const App = () => {
 
       <div className="outline">
         <h2>Welcome to <em>Project: Blog</em></h2>
-          <img className="outlineImg" src="/assets/blog.jpg" alt="" />
+        <img className="outlineImg" src="/assets/blog.jpg" alt="" />
       </div>
 
       <h3>Featured Posts</h3>
