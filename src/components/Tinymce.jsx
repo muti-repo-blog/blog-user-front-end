@@ -37,19 +37,20 @@ export default function Tinymce(props) {
   function checkIfValid() {
     if (!editorRef.current.getContent()) {
       setError("Comment can not be empty!")
-      return 
+      return
     }
 
     postComment(props)
   }
 
   return (
-    <>
+    <div className='editor-wrapper'>
       {error && <p style={{ color: "red" }} className="error">{error}</p>}
       <Editor
         apiKey="gts2oa67hjdy18b02u251x4jqv1ptatqfky56qyg7vx0u2j5"
         onInit={(evt, editor) => (editorRef.current = editor)}
         init={{
+          max_width:  "max(70vw, min(90vw, 300px));",
           placeholder: 'Your Comment Here...',
           height: '20vh',
           menubar: false,
@@ -66,7 +67,7 @@ export default function Tinymce(props) {
         }}
       />
       <button className='tinymceSubmitButton' onClick={() => checkIfValid()}>Comment</button>
-    </>
+    </div>
 
   );
 }
