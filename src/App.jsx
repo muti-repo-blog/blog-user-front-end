@@ -3,7 +3,7 @@ import Header from "./components/header"
 import { useEffect, useState } from "react"
 import { Link } from "react-router"
 import "./css/post.css"
-import { showFirstPartOfPost, postTooLong } from "./components/postHelpers"
+import { getTextPreview, isTooLong } from "./components/postHelpers"
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -37,12 +37,12 @@ const App = () => {
         {data.map(post => (
           <Link to={`/posts/${post.id}`} tabIndex={0} className="featuredPost" key={`post-${post.id}`}>
             <h2>{post.title}</h2>
-            {showFirstPartOfPost(100, post.content)}
-            {postTooLong(100, post.content) &&
-              <>
-                ...<span className="morePost">more</span>
-              </>
-            }
+            <div className="postPreview">
+              {getTextPreview(post.content, 100)}
+              {isTooLong(post.content, 100) && (
+                <>...<span className="morePost">more</span></>
+              )}
+            </div>
           </Link>
         ))}
       </div>

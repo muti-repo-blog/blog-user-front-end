@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Header from "../components/header";
 import { Link } from "react-router";
 import "../css/post.css"
-import { showFirstPartOfPost, postTooLong } from "../components/postHelpers";
+import { isTooLong, getTextPreview } from "../components/postHelpers";
 
 
 const Posts = () => {
@@ -43,23 +43,21 @@ const Posts = () => {
         {data && !loading && data.posts.map(post => (
           <Link to={`/posts/${post.id}`} tabIndex={0} className="featuredPost" key={post.id}>
             <h2>{post.title}</h2>
-            <p>
-              {showFirstPartOfPost(100, post.content)}
-              {postTooLong(100, post.content) &&
-                <>
-                ...<span className="morePost">more</span>
-                </>
-              }
-            </p>
+            <div className="postPreview">
+              {getTextPreview(post.content, 100)}
+              {isTooLong(post.content, 100) && (
+                <>...<span className="morePost">more</span></>
+              )}
+            </div>
           </Link>
         ))}
       </div>
 
-        {data && data.totalPages === 0 &&
-          <p>
-            No posts yet go make one
-          </p>
-        }
+      {data && data.totalPages === 0 &&
+        <p>
+          No posts yet go make one
+        </p>
+      }
 
       {data && data.totalPages !== 0 &&
         <div className="paganation">

@@ -1,15 +1,22 @@
-const postTooLong = (number, string) => {
-  if (string.length < number) return false
-  return true
-}
-
-const showFirstPartOfPost = (number, string) => {
-  if (!string) return "";
-  if (string.length < number) return string
-  return string.slice(0, number)
+const getTextPreview = (html, maxLength = 100) => {
+  if (!html) return "";
+  const temp = document.createElement("div");
+  temp.innerHTML = html;      // convert HTML to text
+  const text = temp.textContent || temp.innerText || "";
+  if (text.length <= maxLength) return text;
+  return text.slice(0, maxLength);
 };
 
+const isTooLong = (html, maxLength = 100) => {
+  if (!html) return false;
+  const temp = document.createElement("div");
+  temp.innerHTML = html;
+  const text = temp.textContent || temp.innerText || "";
+  return text.length > maxLength;
+};
+
+
 export {
-  showFirstPartOfPost,
-  postTooLong,
+  getTextPreview,
+  isTooLong,
 }
